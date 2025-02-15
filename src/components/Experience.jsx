@@ -1,6 +1,6 @@
 import { Center, Environment, OrbitControls } from '@react-three/drei'
-import React from 'react'
-import { HackingDevice } from './HackingDevice'
+import React, { Suspense } from 'react'
+import { HackingDevice } from './HackingDevice/HackingDevice'
 
 const Experience = () => {
   return (
