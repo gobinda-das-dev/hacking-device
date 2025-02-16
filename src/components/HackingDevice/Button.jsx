@@ -1,9 +1,10 @@
-import { Text, useGLTF } from '@react-three/drei'
-import React, { forwardRef, useRef } from 'react'
+import { Text } from '@react-three/drei'
+import React, { forwardRef, useContext, useRef } from 'react'
 import { downAudio, upAudio } from './Audio';
+import { HackingDeviceContext } from './HackingDeviceContext';
 
 const Button = ({ children, fontWeight = 600, fontSize = 1, ...props }, ref) => {
-   const { nodes, materials } = useGLTF('/models/hacking-device.glb');
+  const { nodes, materials } = useContext(HackingDeviceContext);
    const bodyMaterial = materials['BODY.001'];
    const button = ref || useRef();
 
