@@ -13,7 +13,8 @@ const Events = ({children}) => {
       })
       
       window.addEventListener('keydown', (event) => {
-         const button = namedElements.find(b => b.name == event.key);
+         const button = namedElements.find(b => b.name === event.key);
+
 
          if(button) {
             button.position.z = 2;
@@ -21,7 +22,7 @@ const Events = ({children}) => {
       })
 
       window.addEventListener('keyup', (event) => {
-         const button = namedElements.find(b => b.name == event.key);
+         const button = namedElements.find(b => b.name === event.key);
 
          if(button) {
             button.position.z = 2.459;
