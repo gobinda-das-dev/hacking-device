@@ -1,7 +1,7 @@
 import { Center, Environment, OrbitControls } from '@react-three/drei'
 import React, { Suspense } from 'react'
 import { HackingDevice } from './HackingDevice/HackingDevice'
-import Events from './HackingDevice/Events'
+import Events from './HackingDevice/elements/Events'
 
 const Experience = () => {
 

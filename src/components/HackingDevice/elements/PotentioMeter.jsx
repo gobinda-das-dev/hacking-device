@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { HackingDeviceContext } from './HackingDeviceContext';
+import { HackingDeviceContext } from '../HackingDeviceContext';
 
 const PotentioMeter = () => {
   const { nodes, materials } = useContext(HackingDeviceContext);

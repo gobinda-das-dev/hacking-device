@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { HackingDeviceContext } from './HackingDeviceContext'
+import { HackingDeviceContext } from '../HackingDeviceContext'
 
 const Screen = () => {
    const { nodes, materials } = useContext(HackingDeviceContext)

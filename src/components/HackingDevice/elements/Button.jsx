@@ -1,7 +1,7 @@
 import { Text } from '@react-three/drei'
 import React, { forwardRef, useContext, useRef } from 'react'
 import { downAudio, upAudio } from './Audio';
-import { HackingDeviceContext } from './HackingDeviceContext';
+import { HackingDeviceContext } from '../HackingDeviceContext';
 
 const Button = ({ children, fontWeight = 600, fontSize = 1, ...props }, ref) => {
   const { nodes, materials } = useContext(HackingDeviceContext);

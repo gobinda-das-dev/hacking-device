@@ -1,11 +1,11 @@
 import React from 'react';
 import { useGLTF } from '@react-three/drei';
 import Antenna from './elements/Antenna';
-import PotentioMeter from './PotentioMeter';
+import PotentioMeter from './elements/PotentioMeter';
 import { HackingDeviceContext } from './HackingDeviceContext';
-import Others from './Others';
-import Screen from './Screen';
-import Buttons from './Buttons';
+import Others from './elements/Others';
+import Screen from './elements/Screen';
+import Buttons from './elements/Buttons';
 
 export function HackingDevice(props) {
   const { nodes, materials } = useGLTF('/models/hacking-device.glb');
