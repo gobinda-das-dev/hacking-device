@@ -2,7 +2,7 @@ import { Text, useGLTF } from '@react-three/drei'
 import React from 'react'
 
 const Button = ({ children, fontWeight = 600, fontSize = 1, ...props }) => {
-   const { nodes, materials } = useGLTF('/hacking-device.glb');
+   const { nodes, materials } = useGLTF('/models/hacking-device.glb');
    const body = materials['BODY.001'];
 
    return (
