@@ -28,7 +28,7 @@ const Button = ({ children, fontWeight = 600, fontSize = 1, ...props }, ref) => 
          onPointerUp={up}
       >
          <mesh geometry={nodes.Cube022.geometry} material={bodyMaterial} />
-         <Text color='black' fontSize={4} scale={fontSize} fontWeight={fontWeight} position={[0, 0, 0]} rotation={[-Math.PI * 0.5, 0, 0]} position={[0, 1.3, 0]}>{children}</Text>
+         <Text color='black' fontSize={4} scale={fontSize} fontWeight={fontWeight} position={[0, 1.3, 0]} rotation={[-Math.PI * 0.5, 0, 0]}>{children}</Text>
       </group>
    )
 }
