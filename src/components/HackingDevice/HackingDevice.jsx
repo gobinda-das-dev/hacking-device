@@ -1,6 +1,6 @@
 import React from 'react';
 import { useGLTF } from '@react-three/drei';
-import Antenna from './Antenna';
+import Antenna from './elements/Antenna';
 import PotentioMeter from './PotentioMeter';
 import { HackingDeviceContext } from './HackingDeviceContext';
 import Others from './Others';
