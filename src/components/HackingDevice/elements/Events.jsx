@@ -1,13 +1,12 @@
 import React, { useEffect, useRef } from 'react';
 import { Howl } from 'howler';
 import { downAudio, upAudio } from './Audio';
-import textStore from '../textStore'; // Import the Zustand store
+import textStore from '../textStore';
 
 const Events = ({ children }) => {
    const parent = useRef(null);
-   const keysPressed = useRef({}); // Track which keys are currently pressed
+   const keysPressed = useRef({});
 
-   // Zustand actions
    const { writeText, removeLastCharacter, clearText } = textStore();
 
    useEffect(() => {
@@ -15,47 +14,39 @@ const Events = ({ children }) => {
       parent.current.traverse(t => t.name && namedElements.push(t));
 
       const down = (event) => {
-         // Check if the key is already pressed
          if (keysPressed.current[event.key]) return;
 
-         // Mark the key as pressed
          keysPressed.current[event.key] = true;
 
          const button = namedElements.find(b => b.name === event.key);
 
          if (button) {
             downAudio.play();
-            button.position.z = 2; // Move the button down
+            button.position.z = 2;
 
-            // Handle key input
             handleKeyInput(event.key);
          }
       };
 
       const up = (event) => {
-         // Mark the key as released
          keysPressed.current[event.key] = false;
 
          const button = namedElements.find(b => b.name === event.key);
 
          if (button) {
             upAudio.play();
-            button.position.z = 2.459; // Reset the button position
+            button.position.z = 2.459;
          }
       };
 
       const handleKeyInput = (key) => {
-         // Only allow 0-9, Enter, and Backspace
          if (/^[0-9]$/.test(key)) {
-            // Append the number to the text
             writeText(key);
          } else if (key === 'Enter') {
-            // Handle Enter key (e.g., submit the text)
             console.log('Enter pressed. Text:', textStore.getState().text);
-            clearText(); // Clear the text after Enter is pressed
+            clearText();
          } else if (key === 'Backspace') {
-            // Handle Backspace key
-            removeLastCharacter(); // Remove the last character
+            removeLastCharacter();
          }
       };
 
@@ -66,7 +57,7 @@ const Events = ({ children }) => {
          window.removeEventListener('keydown', down);
          window.removeEventListener('keyup', up);
       };
-   }, [writeText, removeLastCharacter, clearText]); // Add Zustand actions as dependencies
+   }, []);
 
    return (
       <group ref={parent}>

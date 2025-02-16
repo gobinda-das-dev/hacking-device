@@ -20,17 +20,19 @@ const Buttons = () => {
 
    return (
       <>
-         {buttonData.map((button, index) => (
-            <Button
-               key={index}
-               fontWeight={button.fontWeight}
-               fontSize={button.fontSize}
-               position={button.position}
-               name={button.name}
-            >
-               {button.text}
-            </Button>
-         ))}
+         {buttonData.map((button, index) => {
+            return (
+               <Button
+                  key={index}
+                  fontWeight={button.fontWeight}
+                  fontSize={button.fontSize}
+                  position={button.position}
+                  name={button.name}
+               >
+                  {button.text}
+               </Button>
+            )
+         })}
       </>
    )
 }
